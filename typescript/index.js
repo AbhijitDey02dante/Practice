@@ -25,3 +25,11 @@ button.addEventListener('click', () => {
     result({ val: 4, timestamp: new Date() });
     console.log(inputNumber, inputString);
 });
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('it worked');
+    }, 1000);
+});
+myPromise.then((result) => {
+    console.log(result.split('w'));
+});

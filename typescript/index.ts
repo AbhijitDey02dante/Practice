@@ -2,7 +2,7 @@ const num1 = document.querySelector('#num1') as HTMLInputElement;
 const num2 = document.querySelector('#num2') as HTMLInputElement;
 const button = document.querySelector('button')!;
 
-const numArray:number[]=[];
+const numArray:Array<number>=[];
 const stringArray:string[]=[];
 
 type NumOrString = number|string;
@@ -32,4 +32,14 @@ button.addEventListener('click',()=>{
     stringArray.push(inputString as string);
     result({val:4,timestamp:new Date()});
     console.log(inputNumber,inputString);
+})
+
+const myPromise=new Promise<string>((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('it worked');
+    },1000);
+})
+
+myPromise.then((result)=>{
+    console.log(result.split('w'));
 })
